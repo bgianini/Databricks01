@@ -1,3 +1,5 @@
+<img src="images/logo_databricks.png" alt="Logo Databricks" width="200"/>
+
 # Databricks01
 
 Teste do Databricks Free
