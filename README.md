@@ -1,4 +1,6 @@
-<img src="images/logo_databricks.png" alt="Logo Databricks" width="200"/>
+<p align="center">
+    <img src="images/logo_databricks.png" alt="Logo Databricks" width="200"/>
+</p>
 
 # Databricks01
 
