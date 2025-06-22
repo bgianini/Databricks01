@@ -1,0 +1,112 @@
+{
+  "datasets" : [ {
+    "name" : "96253d13",
+    "displayName" : "dataset_cor_favorita",
+    "query" : "select cor_favorita, count(*) as qtd from teste_catalogo.silver.logins group by cor_favorita"
+  } ],
+  "pages" : [ {
+    "name" : "0242247e",
+    "displayName" : "Dashboard Cor Favorita",
+    "layout" : [ {
+      "widget" : {
+        "name" : "29b6a576",
+        "queries" : [ {
+          "name" : "main_query",
+          "query" : {
+            "datasetName" : "96253d13",
+            "fields" : [ {
+              "name" : "sum(qtd)",
+              "expression" : "SUM(`qtd`)"
+            }, {
+              "name" : "cor_favorita",
+              "expression" : "`cor_favorita`"
+            } ],
+            "disaggregated" : false
+          }
+        } ],
+        "spec" : {
+          "version" : 3,
+          "widgetType" : "bar",
+          "encodings" : {
+            "x" : {
+              "fieldName" : "sum(qtd)",
+              "scale" : {
+                "type" : "quantitative"
+              },
+              "axis" : {
+                "hideLabels" : false,
+                "hideTitle" : true
+              },
+              "displayName" : "Sum of qtd"
+            },
+            "y" : {
+              "fieldName" : "cor_favorita",
+              "scale" : {
+                "type" : "categorical",
+                "sort" : {
+                  "by" : "x-reversed"
+                }
+              },
+              "displayName" : "cor_favorita"
+            },
+            "label" : {
+              "show" : true
+            }
+          },
+          "frame" : {
+            "showDescription" : false,
+            "showTitle" : false
+          }
+        }
+      },
+      "position" : {
+        "x" : 0,
+        "y" : 0,
+        "width" : 3,
+        "height" : 6
+      }
+    }, {
+      "widget" : {
+        "name" : "491f606e",
+        "queries" : [ {
+          "name" : "dashboards/01f04f02f7941274b78a87d6dd6fd6b5/datasets/01f04f04f1a412b5b25252b0d4233212_qtd",
+          "query" : {
+            "datasetName" : "96253d13",
+            "fields" : [ {
+              "name" : "min(qtd)",
+              "expression" : "MIN(`qtd`)"
+            }, {
+              "name" : "max(qtd)",
+              "expression" : "MAX(`qtd`)"
+            } ],
+            "disaggregated" : false
+          }
+        } ],
+        "spec" : {
+          "version" : 2,
+          "widgetType" : "range-slider",
+          "encodings" : {
+            "fields" : [ {
+              "fieldName" : "qtd",
+              "displayName" : "qtd",
+              "queryName" : "dashboards/01f04f02f7941274b78a87d6dd6fd6b5/datasets/01f04f04f1a412b5b25252b0d4233212_qtd"
+            } ]
+          },
+          "frame" : {
+            "showTitle" : true
+          }
+        }
+      },
+      "position" : {
+        "x" : 0,
+        "y" : 6,
+        "width" : 2,
+        "height" : 1
+      }
+    } ],
+    "pageType" : "PAGE_TYPE_CANVAS"
+  } ],
+  "uiSettings" : {
+    "theme" : { }
+  }
+}
